@@ -24,7 +24,7 @@ export class ImportCommand implements Command {
     this.onCompleteImport = this.onCompleteImport.bind(this);
 
     this.logger = new ConsoleLogger();
-    this.offerService = new DefaultOfferService(this.logger, OfferModel);
+    this.offerService = new DefaultOfferService(this.logger, OfferModel, CategoryModel);
     this.categoryService = new DefaultCategoryService(this.logger, CategoryModel);
     this.userService = new DefaultUserService(this.logger, UserModel);
     this.databaseClient = new MongoDatabaseClient(this.logger);
@@ -58,7 +58,6 @@ export class ImportCommand implements Command {
       userId: user.id,
       title: offer.title,
       description: offer.description,
-      image: offer.image,
       postDate: offer.postDate,
       price: offer.price,
       type: offer.type,

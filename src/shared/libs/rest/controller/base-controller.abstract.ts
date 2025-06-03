@@ -1,5 +1,4 @@
 import { inject, injectable } from 'inversify';
-import { injectable } from 'inversify';
 import { StatusCodes } from 'http-status-codes';
 import { Response, Router } from 'express';
 import asyncHandler from 'express-async-handler';
