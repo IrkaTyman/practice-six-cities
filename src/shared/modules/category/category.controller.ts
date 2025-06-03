@@ -8,8 +8,8 @@ import {
   HttpMethod,
   PrivateRouteMiddleware,
   RequestQuery,
+  ValidateDtoMiddleware,
   ValidateObjectIdMiddleware,
-  ValidateDtoMiddleware
 } from '../../libs/rest/index.js';
 import { Logger } from '../../libs/logger/index.js';
 import { Component } from '../../types/index.js';
@@ -48,6 +48,7 @@ export class CategoryController extends BaseController {
       handler: this.getOffersFromCategory,
       middlewares: [new ValidateObjectIdMiddleware('categoryId')]
     });
+    this.addRoute({ path: '/', method: HttpMethod.Get, handler: this.index });
   }
 
   public async index(_req: Request, res: Response): Promise<void> {
