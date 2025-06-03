@@ -30,7 +30,7 @@
   },
   "include": [
     "src/**/*.ts"
-  ],
+, "src/shared/modules/user/uset.constant.js"  ],
   "exclude": [
     "node_modules",
     "**/*.test.ts"
